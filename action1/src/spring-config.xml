@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+          http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+
+ <bean id="knight" class="org.rmall.hello.BraveKnight" scope="singleton">
+        <constructor-arg ref="quest"/>
+    </bean>
+    <bean id="quest" class="org.rmall.hello.DragonQuest">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+    <bean id="minstrel" class="org.rmall.hello.Minstrel">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+    <bean id="watchquestid" class="org.rmall.hello.watchqeustid">
+    </bean>
+   <aop:config>
+       <aop:aspect ref="minstrel">
+           <aop:pointcut id="embark" expression="execution(* *.doQuest(..))"/>
+
+           <aop:before pointcut-ref="embark" method="singBeforeQuest"/>
+           <aop:after pointcut-ref="embark" method="singafterQuest"/>
+       </aop:aspect>
+       <aop:aspect ref="watchquestid">
+           <aop:around method="watchQuest" pointcut-ref="embark"></aop:around>
+       </aop:aspect>
+       <aop:aspect>
+           <aop:declare-parents types-matching="org.rmall.hello.Knight" implement-interface="org.rmall.hello.attendant"
+                                default-impl="org.rmall.hello.gedemisi"/>
+       </aop:aspect>
+   </aop:config>
+
+</beans>
