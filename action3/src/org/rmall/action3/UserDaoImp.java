@@ -5,8 +5,11 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/3/7.
@@ -31,5 +34,22 @@ public class UserDaoImp implements IUserDao {
             }
         });
         return listAllUser;
+    }
+
+    @Override
+    public void addUser(User user) {
+       String sql="insert into mytest(id,name) values(?,?)";
+        jdbcTemplate.update(sql,
+                new Object[]{user.getId(), user.getName()},
+                new int[]{Types.INTEGER,Types.VARCHAR});
+    }
+
+    @Override
+    public int updateUser(User newUser, User oldUser) {
+
+        String sql="update mytest set id=?,name=? where id=?";
+        return jdbcTemplate.update(sql,
+                new Object[]{newUser.getId(),newUser.getName(),oldUser.getId()},
+                new int[]{Types.INTEGER,Types.VARCHAR,Types.INTEGER});
     }
 }

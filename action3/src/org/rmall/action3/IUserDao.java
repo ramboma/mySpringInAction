@@ -7,4 +7,6 @@ import java.util.List;
  */
 public interface IUserDao {
     public List<User> findAllUser();
+    public void addUser(User user);
+    public int updateUser(User oldUser,User newUser);
 }

@@ -77,6 +77,22 @@ public class myjdbctest {
             ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("myjdbc.xml");
             IUserDao dao=context.getBean(IUserDao.class);
             List<User> list=dao.findAllUser();
+
+            User u1=new User();
+            u1.setId(2);
+            u1.setName("dede");
+            dao.addUser(u1);
+list=dao.findAllUser();
+            for(User u:list) {
+                System.out.println(u.getId());
+                System.out.println(u.getName());
+            }
+
+            User u2=new User();
+            u2.setId(2);
+            u2.setName("new man");
+            dao.updateUser(u2,u1);
+list=dao.findAllUser();
             for(User u:list) {
                 System.out.println(u.getId());
                 System.out.println(u.getName());
