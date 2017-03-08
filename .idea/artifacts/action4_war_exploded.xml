@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="action4:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/action4_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="action4/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="action4" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring Webflow-2.4.0" />
+          <element id="library" level="application" name="spring-beans-3.2.8.RELEASE" />
+          <element id="library" level="project" name="org.apache.commons.logging_1.1.1.v201101211721" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
