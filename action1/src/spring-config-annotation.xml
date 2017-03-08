@@ -9,7 +9,7 @@
             http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
-    <context:component-scan base-package="org.rmall.hello"></context:component-scan>
+    <context:component-scan base-package="org.rmall.action1"></context:component-scan>
 
    <aop:config>
        <aop:aspect ref="minstrel">

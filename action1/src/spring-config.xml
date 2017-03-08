@@ -9,17 +9,17 @@
             http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 
- <bean id="knight" class="org.rmall.hello.BraveKnight" scope="singleton">
+ <bean id="knight" class="org.rmall.action1.BraveKnight" scope="singleton">
         <constructor-arg ref="quest"/>
     </bean>
-    <bean id="quest" class="org.rmall.hello.DragonQuest">
+    <bean id="quest" class="org.rmall.action1.DragonQuest">
         <constructor-arg value="#{T(System).out}"/>
     </bean>
 
-    <bean id="minstrel" class="org.rmall.hello.Minstrel">
+    <bean id="minstrel" class="org.rmall.action1.Minstrel">
         <constructor-arg value="#{T(System).out}"/>
     </bean>
-    <bean id="watchquestid" class="org.rmall.hello.watchqeustid">
+    <bean id="watchquestid" class="org.rmall.action1.watchqeustid">
     </bean>
    <aop:config>
        <aop:aspect ref="minstrel">
@@ -32,8 +32,8 @@
            <aop:around method="watchQuest" pointcut-ref="embark"></aop:around>
        </aop:aspect>
        <aop:aspect>
-           <aop:declare-parents types-matching="org.rmall.hello.Knight" implement-interface="org.rmall.hello.attendant"
-                                default-impl="org.rmall.hello.gedemisi"/>
+           <aop:declare-parents types-matching="org.rmall.action1.Knight" implement-interface="org.rmall.action1.attendant"
+                                default-impl="org.rmall.action1.gedemisi"/>
        </aop:aspect>
    </aop:config>
 

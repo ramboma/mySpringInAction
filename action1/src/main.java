@@ -1,4 +1,4 @@
-import org.rmall.hello.Knight;
+import org.rmall.action1.Knight;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;

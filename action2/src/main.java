@@ -1,7 +1,4 @@
-import org.rmall.hello.action2.CDPlayerConfig;
-import org.rmall.hello.action2.CompactDisc;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.rmall.action2.CompactDisc;
 
 /**
  * Created by Administrator on 2017/3/2.
