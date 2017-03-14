@@ -4,6 +4,7 @@
       <root url="jar://C:/Program Files/Java/jdk1.7.0_80/lib/missioncontrol/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar!/" />
       <root url="jar://$PROJECT_DIR$/../jeecg-mybatis-framework参考学习版本/jeecg-mybatis-framework/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.6-bin.jar!/" />
       <root url="jar://$PROJECT_DIR$/../jeecg-mybatis-framework参考学习版本/jeecg-mybatis-framework/WebRoot/WEB-INF/lib/org.springframework.transaction-3.1.1.RELEASE.jar!/" />
+      <root url="jar://C:/MyEclipse 6.5/myeclipse/eclipse/plugins/org.apache.log4j_1.2.13.v200706111418.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

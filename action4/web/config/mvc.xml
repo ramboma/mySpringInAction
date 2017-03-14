@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置viewResolver-->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/pizzaflow/">
+        </property>
+        <property name="suffix" value=".jsp">
+        </property>
+    </bean>
+    <!--配置urlMapping-->
+    <bean id="viewMappings"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <!-- /shopping.do 请求由 flowController 来处理 -->
+        <!-- 不管设成 /shopping.do 还是设成 /shopping ，或者 /shopping.htm ，效果都是一样的， flowController 都会去找 id 为 shopping的flow来执行 -->
+        <property name="mappings">
+            <value> /identifyCustomer.do=flowController </value>
+        </property>
+        <property name="defaultHandler">
+            <!-- UrlFilenameViewController 会将 "/index" 这样的请求映射成名为 "index" 的视图 -->
+            <bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+        </property>
+    </bean>
+
+    <!--配置webflow默认控制器-->
+    <bean id="flowController" class="org.springframework.webflow.mvc.servlet.FlowController">
+        <property name="flowExecutor" ref="flowExecutor"/>
+    </bean>
+    <!--配置-->
+</beans>

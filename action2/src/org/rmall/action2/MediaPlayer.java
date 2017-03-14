@@ -1,6 +1,6 @@
 package org.rmall.action2;
 
-public interface CompactDisc {
+public interface MediaPlayer {
 
   void play();
 

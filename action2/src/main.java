@@ -1,12 +1,16 @@
 import org.rmall.action2.CompactDisc;
+import org.rmall.action2.test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
 
 /**
  * Created by Administrator on 2017/3/2.
  */
 public class main {
-    private static CompactDisc cd;
     public static void main(String[] args)
     {
-        cd.play();
+        test t=new test();
+        t.play();
     }
 }

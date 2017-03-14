@@ -1,11 +1,13 @@
 package org.rmall.action2;
 
-/**
- * Created by Administrator on 2017/3/2.
- */
+
 public class SgtPeppers implements CompactDisc {
-    private String title="haha ,another inject!";
-    public void play() {
-       System.out.println(title);
-    }
+
+  private String title = "Sgt. Pepper's Lonely Hearts Club Band";  
+  private String artist = "The Beatles";
+  
+  public void play() {
+    System.out.println("Playing " + title + " by " + artist);
+  }
+
 }
